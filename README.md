@@ -2,7 +2,7 @@
 
 
 1_Script_download_data_EA.R
-  Descarga todos los datos necesarios para el modelado:
+  #Descarga todos los datos necesarios para el modelado:
   Datos bioclimáticos de WorldClim y CHELSA (actuales e históricos)
   Modelo digital de elevación (altitud)
   Límites geográficos de Ecuador y países vecinos
