@@ -1,6 +1,6 @@
 # SDM_scripts
 
-# Flujo de Trabajo para Modelado de Distribución de Especies (SDM)
+# Scripts Modelado de Distribución de Especies (SDM)
 
 ## 📥 1. Script_download_data_EA.R  
 **Descarga todos los datos necesarios para el modelado:**  
