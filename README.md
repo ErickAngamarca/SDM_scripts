@@ -47,9 +47,3 @@
 - Analiza superposición de áreas adecuadas  
 - Compara distribuciones altitudinales predichas  
 - Realiza pruebas estadísticas espaciales  
-
-## 🧪 8. Script_virtual_species.R  
-**Crea y analiza especies virtuales para:**  
-- Validar la metodología completa  
-- Probar el desempeño con distribuciones conocidas  
-- Estimar tasas de error esperables  
