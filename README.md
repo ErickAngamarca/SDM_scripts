@@ -1,49 +1,72 @@
-# SDM_scripts
+SDM_scripts
+Species Distribution Modeling (SDM) Scripts
+📥 1. Script_download_data_EA.R
+Downloads all necessary data for modeling:
 
-# Scripts Modelado de Distribución de Especies (SDM)
+Bioclimatic data from WorldClim and CHELSA (current and historical)
 
-## 📥 1. Script_download_data_EA.R  
-**Descarga todos los datos necesarios para el modelado:**  
-- Datos bioclimáticos de WorldClim y CHELSA (actuales e históricos)  
-- Modelo digital de elevación (altitud)  
-- Límites geográficos de Ecuador y países vecinos  
-- Registros de ocurrencia de GBIF para las especies objetivo  
+Digital Elevation Model (altitude)
 
-## 🧹 2. Script_model_1_EA.R  
-**Prepara los datos para el modelado mediante:**  
-- Filtrado de registros de presencia (duplicados, coordenadas inválidas)  
-- Filtrado altitudinal según los rangos de cada especie  
-- Análisis de heterogeneidad ambiental  
-- Delimitación del área de calibración (M)  
+Geographic boundaries of Ecuador and neighboring countries
 
-## 🖥️ 3. Script_model_2_EA.R  
-**Ejecuta el modelado propiamente dicho:**  
-- Selección de variables bioclimáticas (correlación y jackknife)  
-- Calibración de modelos con MaxEnt  
-- Proyección de los modelos en el espacio geográfico  
-- Binarización de los modelos usando umbrales estadísticos  
+Occurrence records from GBIF for target species
 
-## 📊 4. Script_models_prepare_EA.R  
-**Prepara los resultados para análisis posteriores:**  
-- Reorganiza los archivos de salida de los modelos  
-- Convierte los mapas de idoneidad raster a formatos vectoriales  
-- Extrae estadísticas básicas de las predicciones  
+🧹 2. Script_model_1_EA.R
+Prepares the data for modeling by:
 
-## 📈 5. Script_performance_EA.R  
-**Evalúa el desempeño predictivo de los modelos:**  
-- Calcula tasas de omisión (omission rates)  
-- Evalúa el AUC parcial (pROC)  
-- Compara resultados entre datos de entrenamiento y prueba  
+Filtering presence records (duplicates, invalid coordinates)
 
-## 🔍 6. Script_performance_statistic_EA.R  
-**Realiza análisis estadísticos comparativos:**  
-- Pruebas de normalidad (Shapiro-Wilk)  
-- Comparaciones mediante pruebas T pareadas y Wilcoxon  
-- Genera gráficos comparativos de desempeño entre productos bioclimáticos  
+Altitudinal filtering according to species’ elevation ranges
 
-## 🗺️ 7. Script_spatial_difference.R  
-**Analiza las diferencias espaciales entre modelos:**  
-- Calcula mapas de diferencias entre predicciones  
-- Analiza superposición de áreas adecuadas  
-- Compara distribuciones altitudinales predichas  
-- Realiza pruebas estadísticas espaciales  
+Environmental heterogeneity analysis
+
+Delimitation of the calibration area (M)
+
+🖥️ 3. Script_model_2_EA.R
+Performs the actual modeling:
+
+Selection of bioclimatic variables (correlation and jackknife)
+
+Model calibration with MaxEnt
+
+Projection of models in geographic space
+
+Binarization of models using statistical thresholds
+
+📊 4. Script_models_prepare_EA.R
+Prepares model outputs for further analysis:
+
+Reorganizes model output files
+
+Converts suitability maps from raster to vector formats
+
+Extracts basic statistics from predictions
+
+📈 5. Script_performance_EA.R
+Evaluates the predictive performance of the models:
+
+Calculates omission rates
+
+Evaluates partial AUC (pROC)
+
+Compares training and test data results
+
+🔍 6. Script_performance_statistic_EA.R
+Conducts comparative statistical analysis:
+
+Normality tests (Shapiro-Wilk)
+
+Paired T-tests and Wilcoxon tests
+
+Generates comparative performance graphs between bioclimatic products
+
+🗺️ 7. Script_spatial_difference.R
+Analyzes spatial differences between models:
+
+Calculates difference maps between predictions
+
+Analyzes overlap of suitable areas
+
+Compares predicted altitudinal distributions
+
+Performs spatial statistical tests
