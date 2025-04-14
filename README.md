@@ -41,9 +41,9 @@ A suite of R scripts for comparing **CHELSA** and **WorldClim** bioclimatic data
 
 ### 🔍 Statistical Comparison  
 **Analyzes differences between datasets**  
+- Tests data normality (Shapiro-Wilk)  
 - Compares omission rates (paired T-tests)  
 - Evaluates partial AUC (Wilcoxon tests)  
-- Tests data normality (Shapiro-Wilk)  
 - Generates comparative performance visualizations  
 
 ### 🗺️ Spatial Analysis  
@@ -52,16 +52,16 @@ A suite of R scripts for comparing **CHELSA** and **WorldClim** bioclimatic data
 - Maps spatial overlap of suitable habitats  
 - Saves intersection metrics for GIS applications  
 
+### 📊 Area Visualization  
+**Creates publication-quality graphics**  
+- Stacked bar plots showing habitat overlap percentages  
+- Highlights species-specific biases between datasets  
+
 ### ⛰️ Altitudinal Analysis  
 **Examines elevation patterns**  
 - Extracts elevation values from predicted habitats  
 - Compares altitudinal distributions (Wilcoxon tests)  
 - Visualizes elevation ranges by species and dataset  
-
-### 📊 Area Visualization  
-**Creates publication-quality graphics**  
-- Stacked bar plots showing habitat overlap percentages  
-- Highlights species-specific biases between datasets  
 
 ---
 
