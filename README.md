@@ -1,95 +1,141 @@
-# 🐾 SDM_scripts
+🐾 SDM Scripts
+Species Distribution Modeling (SDM) Workflow
+A suite of R scripts for comparing CHELSA and WorldClim bioclimatic datasets across six Andean tree species. From raw data to publication-ready analyses.
 
-Scripts for **Species Distribution Modeling (SDM)** focused on ecological and biogeographic research in Ecuador and surrounding regions.  
-These scripts are structured to automate the workflow from data download to spatial and statistical analysis.
+📂 Script Catalog
+📥 Download Data
+Downloads all required environmental datasets
 
----
+Bioclimatic variables (current and LGM) from WorldClim and CHELSA at multiple resolutions
 
-## 📂 Script List
+High-resolution elevation data for altitudinal filtering
 
-### 📥 1. `Script_download_data_EA.R`  
-**Downloads all necessary data for modeling:**  
-- Bioclimatic data from WorldClim and CHELSA (current and historical)  
-- Digital Elevation Model (altitude)  
-- Geographic boundaries of Ecuador and neighboring countries  
-- Occurrence records from GBIF for the target species  
+Country boundaries (Ecuador, Colombia, Peru) with buffer zones
 
----
+GBIF occurrence records for target species
 
-### 🧹 2. `Script_model_1_EA.R`  
-**Prepares the data for modeling by:**  
-- Filtering presence records (duplicates, invalid coordinates)  
-- Altitudinal filtering according to the ranges of each species  
-- Environmental heterogeneity analysis  
-- Delimitation of the calibration area (M)  
+🧹 Modelling Preparation
+Cleans and prepares species occurrence data
 
----
+Removes duplicate records and invalid coordinates
 
-### 🖥️ 3. `Script_model_2_EA.R`  
-**Runs the actual modeling process:**  
-- Selection of bioclimatic variables (correlation and jackknife)  
-- Model calibration with MaxEnt  
-- Projection of models in geographic space  
-- Binarization of models using statistical thresholds  
+Applies species-specific altitudinal filters
 
----
+Reduces spatial autocorrelation using rarefaction
 
-### 📊 4. `Script_models_prepare_EA.R`  
-**Prepares the results for further analysis:**  
-- Reorganizes model output files  
-- Converts suitability maps from raster to vector formats  
-- Extracts basic prediction statistics  
+Defines calibration areas using Grinnellian niche simulation
 
----
+🖥️ Model Calibration
+Runs and evaluates SDMs using MaxEnt
 
-### 📈 5. `Script_performance_EA.R`  
-**Evaluates the predictive performance of the models:**  
-- Calculates omission rates  
-- Evaluates partial AUC (pROC)  
-- Compares results between training and test data  
+Performs variable selection via jackknife tests
 
----
+Calibrates models with multiple regularization settings
 
-### 🔍 6. `Script_performance_statistic_EA.R`  
-**Performs comparative statistical analysis:**  
-- Normality tests (Shapiro-Wilk)  
-- Paired T-tests and Wilcoxon tests  
-- Generates comparative performance graphs between bioclimatic products  
+Generates current climate projections
 
----
+Creates binary presence/absence maps using statistical thresholds
 
-### 🗺️ 7. `Script_spatial_difference.R`  
-**Analyzes spatial differences between models:**  
-- Calculates difference maps between predictions  
-- Analyzes overlap of suitable areas  
-- Compares predicted altitudinal distributions  
-- Performs spatial statistical tests  
+📊 Model Postprocessing
+Prepares model outputs for analysis
 
----
+Organizes final suitability rasters
 
-## 🛠️ Necessary requirements
+Converts binary outputs to vector polygons
 
-- R (>= 4.0)  
-- R packages: `kuenm`, `sf`, `terra`, `geodata`, `grinnell`, `tidyverse`, `devtools`, `ggplot2`,  among others.
+Masks predictions to study region boundaries
 
-*Make sure all necessary packages are installed before running the scripts.*
+📈 Performance Evaluation
+Assesses model predictive accuracy
 
----
+Calculates omission rates at 5% threshold
 
-## 📌 Notes
+Computes partial ROC statistics
 
-- Scripts are modular and can be run independently.  
-- Folder structure and file naming conventions must be followed for full compatibility.  
-- Designed for ecological niche modeling using **MaxEnt**.
+Saves validation metrics for comparative analysis
 
----
+🔍 Statistical Comparison
+Analyzes differences between datasets
 
-## 📧 Contact
+Compares omission rates (paired T-tests)
 
-For questions or suggestions, please contact:  
-**[Erick Angamarca]**  
-📨 [erick.angamarca@unl.edu.ec]  
-🌐 [https://www.unl.edu.ec/citiab]
+Evaluates partial AUC (Wilcoxon tests)
 
----
+Tests data normality (Shapiro-Wilk)
+
+Generates comparative performance visualizations
+
+🗺️ Spatial Analysis
+Quantifies geographic differences
+
+Calculates area of agreement/disagreement between datasets
+
+Maps spatial overlap of suitable habitats
+
+Saves intersection metrics for GIS applications
+
+⛰️ Altitudinal Analysis
+Examines elevation patterns
+
+Extracts elevation values from predicted habitats
+
+Compares altitudinal distributions (Wilcoxon tests)
+
+Visualizes elevation ranges by species and dataset
+
+📊 Area Visualization
+Creates publication-quality graphics
+
+Stacked bar plots showing habitat overlap percentages
+
+Highlights species-specific biases between datasets
+
+🛠️ Technical Requirements
+Core Dependencies
+R ≥ 4.0
+
+MaxEnt (v3.4.4, standalone)
+
+Key R Packages
+Purpose	Packages
+Spatial Analysis	terra, sf, raster
+Modeling	kuenm, grinnell
+Data Wrangling	tidyverse, data.table
+Visualization	ggplot2, patchwork, scales
+💡 All scripts include automatic package installation via pacman::p_load()
+
+📌 Usage Notes
+Folder Structure
+bash
+Copy
+Project/
+├── 1_raw_data/         # Downloaded datasets
+├── 2_processed/        # Cleaned occurrences
+├── 3_model_outputs/    # MaxEnt results
+└── 4_analysis/         # Statistical and spatial results
+Species Coding
+Uses 6-letter abbreviations (first 3 letters of genus + species):
+
+Alnacu = Alnus acuminata
+
+Vismac = Vismia baccifera
+
+📧 Contact
+Erick Angamarca
+🌱 Biodiversity Researcher
+📧 [erick.angamarca@unl.edu.ec]
+🏛️ National University of Loja, Ecuador
+
+mermaid
+Copy
+graph TD
+    A[Download Data] --> B[Modelling Preparation]
+    B --> C[Model Calibration]
+    C --> D[Model Postprocessing]
+    D --> E[Performance Evaluation]
+    E --> F[Statistical Comparison]
+    D --> G[Spatial Analysis]
+    D --> H[Altitudinal Analysis]
+    G --> I[Area Visualization]
+    H --> I
 
