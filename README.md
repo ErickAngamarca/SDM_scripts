@@ -83,34 +83,7 @@ A suite of R scripts for comparing **CHELSA** and **WorldClim** bioclimatic data
 
 ---
 
-## 📌 Usage Notes  
-
-### Folder Structure  
-```bash
-Project/
-├── 1_raw_data/         # Downloaded datasets
-├── 2_processed/        # Cleaned occurrences
-├── 3_model_outputs/    # MaxEnt results
-└── 4_analysis/         # Statistical and spatial results
----
-### Species Coding
-## Uses 6-letter abbreviations (first 3 letters of genus + species)
-
-Aln_acu = Alnus acuminata
-Vis_mac = Vismia baccifera
-
-```bash
-    A[Download Data] --> B[Modelling Preparation]
-    B --> C[Model Calibration]
-    C --> D[Model Postprocessing]
-    D --> E[Performance Evaluation]
-    E --> F[Statistical Comparison]
-    D --> G[Spatial Analysis]
-    D --> H[Altitudinal Analysis]
-    G --> I[Area Visualization]
-    H --> I
-
-📧 Contact
+## 📧 Contact
 Erick Angamarca
 🌱 Biodiversity Researcher
 📧 [erick.angamarca@unl.edu.ec]
