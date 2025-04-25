@@ -85,6 +85,5 @@ A suite of R scripts for comparing **CHELSA** and **WorldClim** bioclimatic data
 
 ### 📧 Contact
 **Erick Angamarca**
-- *🌱 Biodiversity Researcher*
 - *📧 erick.angamarca@unl.edu.ec*
 - *🏛️ National University of Loja, Ecuador*
